@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./code:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  php:
+    image: php:8.2-fpm
+    container_name: php-fpm-app
+    volumes:
+      - ./code:/var/www/html
+
+  db:
+    image: mariadb:10.6
+    container_name: mariadb-app
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: miappdb
+      MYSQL_USER: miusuario
+      MYSQL_PASSWORD: mipass
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
