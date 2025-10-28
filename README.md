@@ -1,4 +1,3 @@
-
 # Mi App con Nginx + PHP-FPM + MySQL en Docker
 
 ## Descripción
@@ -12,5 +11,4 @@ Aplicación PHP desplegada en contenedores usando Docker Compose.
 ## Instrucciones de despliegue
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/usuario/miapp-docker.git
-   cd miapp-docker
+   git clone https://github.com/Ilsa1998/miapp-docker.git
